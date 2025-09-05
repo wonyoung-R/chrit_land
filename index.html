@@ -46,11 +46,6 @@
         <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
             Chrit
         </div>
-        <div class="hidden md:flex space-x-8">
-            <a href="#features" class="text-gray-400 hover:text-white transition duration-300">기능</a>
-            <a href="#pricing" class="text-gray-400 hover:text-white transition duration-300">가격</a>
-            <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">문의</a>
-        </div>
     </nav>
 
     <!-- Hero Section -->
@@ -139,8 +134,11 @@
             </p>
             
             <div class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 max-w-md mx-auto">
-                <div class="text-4xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
-                    ₩7,900
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <span class="text-2xl text-gray-500 line-through">₩12,900</span>
+                    <div class="text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                        ₩7,900
+                    </div>
                 </div>
                 <div class="text-gray-400 mb-6">월 구독</div>
                 
@@ -229,7 +227,7 @@
             
             try {
                 // Send to Google Sheets
-                const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                const response = await fetch('https://script.google.com/macros/s/AKfycbxOa4Bvxc-dbTcRidnSW5TSt_XFCU4Rc_k5hZkIuW0K-TB4zMnfOw7V07HLqNA6S_AQ4g/exec', {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: {
