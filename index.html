@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrit - AI 지식 관리 서비스</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'gradient': 'gradient 3s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' },
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="min-h-screen bg-black text-white overflow-x-hidden">
+    <!-- Background Effects -->
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-black to-blue-900/20"></div>
+    <div class="absolute inset-0">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-pulse" style="animation-delay: 2s;"></div>
+        <div class="absolute top-3/4 left-1/2 w-64 h-64 bg-purple-500/5 rounded-full blur-2xl animate-float"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="relative z-10 flex justify-between items-center p-8">
+        <div class="text-2xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+            Chrit
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a href="#features" class="text-gray-400 hover:text-white transition duration-300">기능</a>
+            <a href="#pricing" class="text-gray-400 hover:text-white transition duration-300">가격</a>
+            <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">문의</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="relative z-10 flex flex-col items-center justify-center min-h-[80vh] px-8">
+        <div class="text-center max-w-4xl mx-auto">
+            <!-- Main Heading -->
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent animate-gradient">
+                AI로 지식을<br>
+                <span class="bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">스마트하게</span> 관리하세요
+            </h1>
+            
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
+                유튜브 영상과 기사 링크만으로 AI가 자동으로 요약하고 분류해주는<br>
+                차세대 지식 관리 서비스
+            </p>
+
+            <!-- Email Collection Form -->
+            <div class="max-w-md mx-auto mb-16">
+                <div class="relative group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition duration-300"></div>
+                    <form id="emailForm" class="relative flex flex-col sm:flex-row gap-4">
+                        <input 
+                            type="email" 
+                            id="emailInput"
+                            placeholder="이메일 주소를 입력하세요" 
+                            class="flex-1 px-6 py-4 text-lg bg-gray-900/90 backdrop-blur-sm border border-gray-800 rounded-2xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 transition-all duration-300"
+                            required
+                        >
+                        <button 
+                            type="submit"
+                            class="px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-2xl hover:from-purple-700 hover:to-blue-700 transition duration-200 font-medium whitespace-nowrap"
+                        >
+                            알림 받기
+                        </button>
+                    </form>
+                </div>
+                <p class="text-sm text-gray-500 mt-4 text-center">
+                    서비스 출시 시 가장 먼저 알려드립니다
+                </p>
+            </div>
+
+            <!-- Features Preview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                <div class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-purple-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">AI 자동 요약</h3>
+                    <p class="text-gray-400 text-sm">유튜브 영상과 기사를 AI가 핵심 내용만 추출해서 요약해드립니다</p>
+                </div>
+
+                <div class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-purple-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">스마트 분류</h3>
+                    <p class="text-gray-400 text-sm">키워드 추출과 자동 분류로 체계적인 지식 관리가 가능합니다</p>
+                </div>
+
+                <div class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-6 hover:border-purple-500/50 transition duration-300">
+                    <div class="w-12 h-12 bg-gradient-to-r from-purple-600 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold mb-2">간편한 관리</h3>
+                    <p class="text-gray-400 text-sm">노션, 아이폰 메모와는 다른 전문적인 요약과 분류 기능</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="relative z-10 py-16 px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+                합리적인 가격으로 시작하세요
+            </h2>
+            <p class="text-gray-400 mb-12 text-lg">
+                월 7,900원으로 약 100개의 지식을 AI가 요약해드립니다
+            </p>
+            
+            <div class="bg-gray-900/50 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 max-w-md mx-auto">
+                <div class="text-4xl font-bold mb-2 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                    ₩7,900
+                </div>
+                <div class="text-gray-400 mb-6">월 구독</div>
+                
+                <ul class="text-left space-y-3 mb-8">
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        월 100개 콘텐츠 요약
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        유튜브 영상 자동 요약
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        기사 링크 요약
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        키워드 추출 및 분류
+                    </li>
+                    <li class="flex items-center">
+                        <svg class="w-5 h-5 text-green-400 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        체계적인 지식 관리
+                    </li>
+                </ul>
+                
+                <button class="w-full px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl hover:from-purple-700 hover:to-blue-700 transition duration-200 font-medium">
+                    서비스 출시 알림 받기
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="relative z-10 py-8 px-8 border-t border-gray-800">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="text-xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent">
+                Chrit
+            </div>
+            <p class="text-gray-500 text-sm">
+                AI로 지식을 스마트하게 관리하는 차세대 서비스
+            </p>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 hidden">
+        <div class="bg-gray-900/90 backdrop-blur-sm border border-gray-800 rounded-2xl p-8 max-w-md mx-auto mx-4">
+            <div class="text-center">
+                <div class="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+                <h3 class="text-xl font-bold mb-2">감사합니다!</h3>
+                <p class="text-gray-400 mb-6">서비스 출시 시 가장 먼저 알려드리겠습니다.</p>
+                <button onclick="closeModal()" class="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-xl hover:from-purple-700 hover:to-blue-700 transition duration-200 font-medium">
+                    확인
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Email form submission
+        document.getElementById('emailForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const submitButton = e.target.querySelector('button[type="submit"]');
+            
+            // Show loading state
+            const originalText = submitButton.textContent;
+            submitButton.textContent = '처리 중...';
+            submitButton.disabled = true;
+            
+            try {
+                // Send to Google Sheets
+                const response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        email: email,
+                        timestamp: new Date().toISOString()
+                    })
+                });
+                
+                // Show success modal
+                document.getElementById('successModal').classList.remove('hidden');
+                document.getElementById('emailInput').value = '';
+                
+            } catch (error) {
+                console.error('Error:', error);
+                alert('오류가 발생했습니다. 다시 시도해주세요.');
+            } finally {
+                // Reset button state
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
+        });
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+        
+        // Close modal on outside click
+        document.getElementById('successModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
